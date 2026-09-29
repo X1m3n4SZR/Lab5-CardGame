@@ -69,7 +69,7 @@ public class HelloApplication extends Application {
             }
             System.out.println("It goes to the end");
         }
-        System.out.println("It goes to the end");
+        System.out.println("It goes to pthe end");
     }
 
 
