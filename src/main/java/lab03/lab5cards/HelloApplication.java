@@ -58,7 +58,7 @@ public class HelloApplication extends Application {
                     imageView.setLayoutY(row);
 
                     base.getChildren().add(imageView);
-                    if(count == 13){
+                    if(count == 12){
                         row += 20;
                         col = 100;
                         count = 0;
