@@ -42,7 +42,7 @@ public class HelloApplication extends Application {
         File cards = new File("src/main/Cards");
         File[] listOfCards = cards.listFiles();
         int col = 100;
-        int row = 100;
+        int row = 25;
         int count = 0;
 
         if(listOfCards != null){
@@ -54,17 +54,24 @@ public class HelloApplication extends Application {
                     imageView.setFitWidth(70);
                     imageView.setFitHeight(95);
                     imageView.setPreserveRatio(true);
+                    System.out.println("Setting the Cards: " + count);
                     imageView.setLayoutX(col);
                     imageView.setLayoutY(row);
 
                     base.getChildren().add(imageView);
                     if(count == 12){
-                        row += 20;
+                        row += 100;
                         col = 100;
                         count = 0;
+                        System.out.println("In if: " + count);
                     }
-                    col += 80;
-                    count++;
+                    else{
+                        col += 80;
+                        count++ ;
+                        System.out.println("After the ++: " + count);
+
+                    }
+
                 }
             }
             System.out.println("It goes to the end");
