@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class HelloApplication extends Application {
@@ -20,7 +21,8 @@ public class HelloApplication extends Application {
 
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        base = new Pane();//fxmlLoader.load();
+        //fxmlLoader.load();
+        base = new Pane();
         Scene scene = new Scene(base,1250, 500);
 
         Button shuffle = new Button();
@@ -34,8 +36,6 @@ public class HelloApplication extends Application {
         stage.setTitle("Lab 5:Shuffle Deck of Cards");
         stage.setScene(scene);
         stage.show();
-
-
     }
 
     void displayCards(){
@@ -138,7 +138,5 @@ public class HelloApplication extends Application {
         }
     }
 
-    public static void main(String[] args) {
-        launch();
-    }
+    public static void main(String[] args) { launch();}
 }
