@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
 
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Pane base = new Pane();//fxmlLoader.load();
+        base = new Pane();//fxmlLoader.load();
         Scene scene = new Scene(base,1250, 500);
 
         Button shuffle = new Button();
@@ -42,7 +42,7 @@ public class HelloApplication extends Application {
         File cards = new File("src/main/Cards");
         File[] listOfCards = cards.listFiles();
         int col = 100;
-        int row = 100;
+        int row = 25;
         int count = 0;
 
         if(listOfCards != null){
@@ -58,13 +58,14 @@ public class HelloApplication extends Application {
                     imageView.setLayoutY(row);
 
                     base.getChildren().add(imageView);
-                    if(count == 13){
-                        row += 20;
+                    if(count == 12){
+                        row += 100;
                         col = 100;
                         count = 0;
+                    }else {
+                        col += 80;
+                        count++;
                     }
-                    col += 80;
-                    count++;
                 }
             }
             System.out.println("It goes to the end");
