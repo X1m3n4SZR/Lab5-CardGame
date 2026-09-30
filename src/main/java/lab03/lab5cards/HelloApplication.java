@@ -54,7 +54,6 @@ public class HelloApplication extends Application {
                     imageView.setFitWidth(70);
                     imageView.setFitHeight(95);
                     imageView.setPreserveRatio(true);
-                    System.out.println("Setting the Cards: " + count);
                     imageView.setLayoutX(col);
                     imageView.setLayoutY(row);
 
@@ -63,13 +62,10 @@ public class HelloApplication extends Application {
                         row += 100;
                         col = 100;
                         count = 0;
-                        System.out.println("In if: " + count);
                     }
                     else{
                         col += 80;
                         count++ ;
-                        System.out.println("After the ++: " + count);
-
                     }
 
                 }
