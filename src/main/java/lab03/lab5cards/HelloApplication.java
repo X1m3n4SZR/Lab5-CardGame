@@ -36,7 +36,14 @@ public class HelloApplication extends Application {
         stage.setTitle("Lab 5:Shuffle Deck of Cards");
         stage.setScene(scene);
         stage.show();
+
+        shuffle.setOnAction(actionEvent -> {
+            System.out.println("Yay");
+            /* input shuffle function */
+        });
     }
+
+
 
     void displayCards(){
         System.out.println("Its working");
