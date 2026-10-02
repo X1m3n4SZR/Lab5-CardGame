@@ -2,8 +2,10 @@ package lab03.lab5cards;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
@@ -33,6 +35,13 @@ public class HelloApplication extends Application {
         base.getChildren().add(shuffle);
         displayCards();
 
+        Button blackjack = new Button();
+        blackjack.setText("Play BlackJack");
+        blackjack.setLayoutX(400);
+        blackjack.setLayoutY(450);
+        base.setStyle("-fx-background-color: #00FF00");
+        base.getChildren().add(blackjack);
+
         stage.setTitle("Lab 5:Shuffle Deck of Cards");
         stage.setScene(scene);
         stage.show();
@@ -40,6 +49,16 @@ public class HelloApplication extends Application {
         shuffle.setOnAction(actionEvent -> {
             System.out.println("Yay");
             /* input shuffle function */
+        });
+
+        blackjack.setOnAction(actionEvent -> {
+            Stage blackJack = new Stage();
+            Pane pane = new Pane();
+            Scene show = new Scene(pane, 600, 500);
+
+            blackJack.setTitle("BlackJack!");
+            blackJack.setScene(show);
+            blackJack.show();
         });
     }
 
