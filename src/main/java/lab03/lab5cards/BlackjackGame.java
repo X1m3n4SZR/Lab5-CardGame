@@ -160,12 +160,15 @@ public class BlackjackGame {
     private void drawHand(List<File> hand, int y) {
         // squeeze the cards closer together if the hand gets long
         double step = hand.size() > 1 ? Math.min(80, 500.0 / (hand.size() - 1)) : 0;
+        // total width of the row of cards, used to find the left edge that centers it in the 600-wide pane
+        double rowWidth = 70 + (hand.size() - 1) * step;
+        double startX = (600 - rowWidth) / 2;
         for (int i = 0; i < hand.size(); i++) {
             ImageView view = new ImageView(new Image(hand.get(i).toURI().toString()));
             view.setFitWidth(70);
             view.setFitHeight(95);
             view.setPreserveRatio(true);
-            view.setLayoutX(20 + i * step);
+            view.setLayoutX(startX + i * step);
             view.setLayoutY(y);
             pane.getChildren().add(view);
         }
