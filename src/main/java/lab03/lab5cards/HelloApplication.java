@@ -128,6 +128,8 @@ public class HelloApplication extends Application {
             return;
         }
 
+        //puts the cards into a random order starting at the last card
+        //then swaps it with a random card at or before it then step back and repeat
         Random rand = new Random();
         for(int i = listOfCards.length - 1; i > 0; i--){
             int j = rand.nextInt(i + 1);
@@ -136,9 +138,10 @@ public class HelloApplication extends Application {
             listOfCards[i] = listOfCards[j];
             listOfCards[j] = temp;
         }
-
+        //removes old card pictures from the screen (keeping the current buttons)
         base.getChildren().removeIf(node -> node instanceof ImageView);
 
+        //draws the cards in their new order (using the same layout as displayCards)
         int col = 100;
         int row = 25;
         int count = 0;
