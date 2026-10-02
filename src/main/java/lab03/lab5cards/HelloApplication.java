@@ -38,8 +38,7 @@ public class HelloApplication extends Application {
         stage.show();
 
         shuffle.setOnAction(actionEvent -> {
-            System.out.println("Yay");
-            /* input shuffle function */
+            shuffleCards();
         });
     }
 
@@ -96,6 +95,55 @@ public class HelloApplication extends Application {
                         col += 80;
                         count++ ;
                     }
+                }
+            }
+        }
+    }
+
+    void shuffleCards(){
+        File cards = new File("src/main/Cards");
+        File[] listOfCards = cards.listFiles();
+
+        if(listOfCards == null) {
+            System.out.println("Could not find the Cards");
+            return;
+        }
+
+        Random rand = new Random();
+        for(int i = listOfCards.length - 1; i > 0; i--){
+            int j = rand.nextInt(i + 1);
+
+            File temp = listOfCards[i];
+            listOfCards[i] = listOfCards[j];
+            listOfCards[j] = temp;
+        }
+
+        base.getChildren().removeIf(node -> node instanceof ImageView);
+
+        int col = 100;
+        int row = 25;
+        int count = 0;
+
+        for(File file : listOfCards){
+            if(file.isFile() && file.getName().endsWith(".png")){
+
+                Image image = new Image(file.toURI().toString());
+                ImageView imageView = new ImageView(image);
+                imageView.setFitWidth(70);
+                imageView.setFitHeight(95);
+                imageView.setPreserveRatio(true);
+                imageView.setLayoutX(col);
+                imageView.setLayoutY(row);
+
+                base.getChildren().add(imageView);
+                if(count == 12){
+                    row += 100;
+                    col = 100;
+                    count = 0;
+                }
+                else{
+                    col += 80;
+                    count++ ;
                 }
             }
         }
