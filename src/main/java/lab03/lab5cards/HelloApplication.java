@@ -59,7 +59,7 @@ public class HelloApplication extends Application {
             blackJack.setScene(show);
             blackJack.show();
 
-            //new BlackjackGame().show();
+            new BlackjackGame().show();
         });
     }
 
