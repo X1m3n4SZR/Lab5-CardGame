@@ -31,7 +31,7 @@ public class HelloApplication extends Application {
         shuffle.setText("Shuffle");
         shuffle.setLayoutX(600);
         shuffle.setLayoutY(450);
-        base.setStyle("-fx-background-color: #00FF00");
+        base.setStyle("-fx-background-color: #548544");
         base.getChildren().add(shuffle);
         displayCards();
 
@@ -39,7 +39,7 @@ public class HelloApplication extends Application {
         blackjack.setText("Play BlackJack");
         blackjack.setLayoutX(400);
         blackjack.setLayoutY(450);
-        base.setStyle("-fx-background-color: #00FF00");
+        base.setStyle("-fx-background-color: #548544");
         base.getChildren().add(blackjack);
 
         stage.setTitle("Lab 5: Shuffle a Deck of Cards");
@@ -51,14 +51,6 @@ public class HelloApplication extends Application {
         });
 
         blackjack.setOnAction(actionEvent -> {
-            Stage blackJack = new Stage();
-            Pane pane = new Pane();
-            Scene show = new Scene(pane, 1250, 500);
-
-            blackJack.setTitle("Playing Black Jack!");
-            blackJack.setScene(show);
-            blackJack.show();
-
             new BlackjackGame().show();
         });
     }

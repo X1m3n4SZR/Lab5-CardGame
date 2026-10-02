@@ -33,7 +33,7 @@ public class BlackjackGame {
     private boolean mustHit = false;
 
     public BlackjackGame() {
-        pane.setStyle("-fx-background-color: #00FF00");
+        pane.setStyle("-fx-background-color: #548544");
 
         hit.setLayoutX(220);
         hit.setLayoutY(450);
