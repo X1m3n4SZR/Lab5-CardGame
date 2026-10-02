@@ -42,7 +42,7 @@ public class HelloApplication extends Application {
         base.setStyle("-fx-background-color: #00FF00");
         base.getChildren().add(blackjack);
 
-        stage.setTitle("Lab 5:Shuffle Deck of Cards");
+        stage.setTitle("Lab 5: Shuffle a Deck of Cards");
         stage.setScene(scene);
         stage.show();
 
@@ -53,11 +53,13 @@ public class HelloApplication extends Application {
         blackjack.setOnAction(actionEvent -> {
             Stage blackJack = new Stage();
             Pane pane = new Pane();
-            Scene show = new Scene(pane, 600, 500);
+            Scene show = new Scene(pane, 1250, 500);
 
-            blackJack.setTitle("BlackJack!");
+            blackJack.setTitle("Playing Black Jack!");
             blackJack.setScene(show);
             blackJack.show();
+
+            //new BlackjackGame().show();
         });
     }
 
